@@ -1,6 +1,6 @@
 # machine-learning-microservice
 
-A basic machine learning microservice for a **recommendation task** developed using:  
+A basic **recommendation system** machine learning microservice developed using:  
 - <img src="https://149860134.v2.pressablecdn.com/wp-content/uploads/pythoned.png" alt="drawing" width="14em;"/> **Python** (+ Scikit-Learn + FastAPI)  
 - <img src="https://www.uvicorn.org/uvicorn.png" alt="drawing" width="14em;"/> **Uvicorn**  
 - <img src="https://static-00.iconduck.com/assets.00/docker-icon-icon-512x370-m2lt8o0b.png" alt="drawing" width="14em;"/> **Docker**  
