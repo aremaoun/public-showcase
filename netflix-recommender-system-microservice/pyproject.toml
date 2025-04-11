@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "machine-learning-microservice"
+name = "netflix-recommender-system-microservice"
 version = "0.1.0"
-description = "A basic machine learning microservice for a recommendation task"
+description = "A basic machine learning microservice of a recommendation system on the Netflix Prize data."
 authors = ["aremaoun"]
 license = "MIT License"
 readme = "README.md"
