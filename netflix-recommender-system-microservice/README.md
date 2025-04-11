@@ -41,13 +41,14 @@ Install the project (dependencies etc.). This also generates/updates the `poetry
 
 ### 2nd option - by running Docker <img src="https://static-00.iconduck.com/assets.00/docker-icon-icon-512x370-m2lt8o0b.png" alt="drawing" width="18em;"/>
 
+To follow...
 
 
 ## Behind the scenes
 
 ### The dataset
 
-The full Netflix dataset contains a history of ratings of movies by users. It is comprised of several files and is more than 2GB. To reduce the size, I first processed it to only keep the ratings that were done between DATE1 and DATE2. Then I processed the movie datafile to only keep a sample of movies that were rated often enough in that period. The 2 tables were then joined, see notebook ?. The output is the ?MB file ``.  (Maybe better not to use the date for filtering: just pick randomly 100 movies, then select only the users who have rated at least 2 of these movies, and discard their ratings for other movies.) 1 notebook for sampling, another notebook for exploration and prototyping.
+The full Netflix dataset contains a history of movie ratings by users. It is comprised of several files and is more than 2GB. To reduce the size, I first processed it to only keep the ratings that were done between DATE1 and DATE2. Then I processed the movie datafile to only keep a sample of movies that were rated often enough in that period. The 2 tables were then joined, see notebook ?. The output is the ?MB file ``.  (Maybe better not to use the date for filtering: just pick randomly 100 movies, then select only the users who have rated at least 2 of these movies, and discard their ratings for other movies.) 1 notebook for sampling, another notebook for exploration and prototyping.
 
 The period (1) between ? and ? is used for learning.  
 The period (2) between ? and ? is used for predicting.  
