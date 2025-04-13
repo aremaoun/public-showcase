@@ -1,4 +1,4 @@
-DATA_DIRECTORY_PATH: "../data"
-MODEL_DIRECTORY_PATH: "../models"
-MODEL_TIMESTAMP_ID: 1744560300 # Reference of model for predicting
+DATA_DIRECTORY_PATH: "./data"
+MODEL_DIRECTORY_PATH: "./models"
+MODEL_TIMESTAMP_ID: 1744574035 # Reference of model for predicting
 SEED: 1
