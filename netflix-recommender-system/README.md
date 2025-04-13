@@ -54,9 +54,9 @@ The goal is to predict the ratings in the period (2) based on those in the perio
 
 ### Feature engineering
 
-The techniques used for recommending tasks are called **collaborative filtering**. They aim to predict the rating  (or purchase, click... depending on the business case) submitted by an individual on an item based on the rating submitted by similar individuals on similar items. My pretty trivial approach here for collaborative filtering is for each rating of a user U on a movie M, to consider the users that have rated movie M, have an average gap <= 0.5 on common movies whith user U (movie M excluded), and then compute the average rating they made on the movie.  
+The techniques used for recommending tasks are called **collaborative filtering**. They aim to predict the rating  (or purchase, click... depending on the business case) submitted by an individual on an item based on the rating submitted by similar individuals on similar items. My pretty trivial approach here for collaborative filtering is for each rating of a user U on a movie M, to consider the users that have rated movie M, have an average gap <= 0.5 on common movies whith user U (movie M excluded), and then compute the average rating they made on movie M.  
 
-I also classify movies by era (e.g 70s and 80s) and consider the average rate submitted by the individual on other movies of that era.
+I also classify movies by era (e.g 70s and 80s) and consider the average rate submitted by the individual on other movies of that era.  
 
 Out of simplicity, movie titles are not considered as features. I assume a lot of work for modest gain in accuracy.  
 
