@@ -7,6 +7,26 @@ A basic machine learning **recommender system** application based on the famous 
 
 To speed it up, this project is actually based on a small sample of the [actual dataset](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data), please read further below on that.
 
+
+## Behind the scenes
+
+### Dataset
+
+The full Netflix dataset contains a history of movie ratings by users. It is comprised of several files and is more than 2GB. The size of the data is reduced to less tham 100KB for simplicity, see notebook `01. Sampling.ipynb` for the methodology.
+
+### Feature engineering
+
+The techniques used for recommending tasks are called **collaborative filtering**. They aim to predict the rating  (or purchase, click... depending on the business case) submitted by an individual on an item based on the rating submitted by similar individuals on similar items. My pretty trivial approach here for collaborative filtering is for each rating of a user U on a movie M, to consider the users that have rated movie M, have an average gap <= 0.5 on common movies whith user U (movie M excluded), and then compute the average rating they made on movie M.  
+
+I also classify movies by era (e.g 70s and 80s) and consider the average rate submitted by the individual on other movies of that era.  
+
+Out of simplicity, movie titles are not considered as features. I assume a lot of work for modest gain in accuracy.  
+
+The objective metric is RMSE, which was the one used in the competition.  
+
+We learn on rating data up to 2003, validate on 2004 and predict on 2005.  
+
+
 ## Run the application
 
 There are 2 possibilities to run the application. 
@@ -44,25 +64,7 @@ Install the project (dependencies etc.). This also generates/updates the `poetry
 To follow...
 
 
-## Behind the scenes
-
-### Dataset
-
-The full Netflix dataset contains a history of movie ratings by users. It is comprised of several files and is more than 2GB. The size of the data is reduced to less tham 100KB for simplicity, see notebook `01. Sampling.ipynb` for the methodology.
-
-The goal is to predict the ratings in the period (2) based on those in the period (1).
-
-### Feature engineering
-
-The techniques used for recommending tasks are called **collaborative filtering**. They aim to predict the rating  (or purchase, click... depending on the business case) submitted by an individual on an item based on the rating submitted by similar individuals on similar items. My pretty trivial approach here for collaborative filtering is for each rating of a user U on a movie M, to consider the users that have rated movie M, have an average gap <= 0.5 on common movies whith user U (movie M excluded), and then compute the average rating they made on movie M.  
-
-I also classify movies by era (e.g 70s and 80s) and consider the average rate submitted by the individual on other movies of that era.  
-
-Out of simplicity, movie titles are not considered as features. I assume a lot of work for modest gain in accuracy.  
-
-The objective metric is RMSE, which was the one used in the competition.  
-
-### Predictions
+## Get the predictions
 
 Requests for predictions can be sent like this:  
 ```
