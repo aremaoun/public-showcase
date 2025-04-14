@@ -70,7 +70,7 @@ Run the container:
 ## Get the predictions
 
 Requests for predictions can be sent like this:
-```
+```bash
 curl --header "Content-Type: application/json" \
   --request POST \
   --data '{"customer_id": 1044034, "rating_date": "2005-02-03", "movie_id": 12031, "release_year": 2002, "title": "Scotland"}' \
@@ -78,7 +78,7 @@ curl --header "Content-Type: application/json" \
 ```
 
 The sends back the result after about a minute:
-```
+```bash
 {"predicted_rating":3.245851373706017}
 ```
 
@@ -104,3 +104,11 @@ Run mypy (static type checker):
 ### pylint
 Run pylint (static code analyzer):
 `pylint netflix_recommender_system`
+
+### Unit tests
+Run the 1st time:
+`pytest tests/ -vvv --snapshot-update`
+
+This will create the snapshot to be tested against.
+After that, always run:
+`pytest tests/ -vvv`
