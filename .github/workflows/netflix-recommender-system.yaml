@@ -1,4 +1,4 @@
-name: Run unit test for netflix-recommender-system
+name: Run python unit test for netflix-recommender-system
 
 on:
   # pull_request:
@@ -17,7 +17,7 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
     - run: |
-        cd netflix-recommender-system
+        ls -al
         sudo apt-get update && sudo apt-get install -y --no-install-recommends gcc linux-libc-dev libc6-dev
         pip install "poetry==1.6.1" && poetry config virtualenvs.create false && poetry install --no-root --no-interaction -vvv
         pytest tests/ -vvv
