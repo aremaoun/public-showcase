@@ -13,7 +13,7 @@ numpy = "^2.0"
 scikit-learn = "^1.6.1"
 fastapi = {extras = ["standard"], version = "^0.115.12"}
 uvicorn = "^0.34.0"
-dill = "^0.3.9"
+dill = "^0.3.9" # Replacement for pickle. Pickles could not load on fastAPI/Uvicorn w issues related to namespaces
 
 
 [tool.poetry.group.dev.dependencies]
@@ -29,3 +29,17 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 train = 'netflix_recommender_system.train:run'
+
+# [[tool.mypy.overrides]]
+# module = "yaml.*"
+# ignore_missing_imports = true
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = '''import-error,
+             no-name-in-module,
+             logging-fstring-interpolation,
+             use-implicit-booleaness-not-comparison,
+             fixme'''
