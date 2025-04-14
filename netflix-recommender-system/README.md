@@ -61,7 +61,11 @@ Install the project (dependencies etc.). This also generates/updates the `poetry
 
 ### 2nd option - by running Docker <img src="https://static-00.iconduck.com/assets.00/docker-icon-icon-512x370-m2lt8o0b.png" alt="drawing" width="18em;"/>
 
-To follow...
+Build the image:  
+`docker build -t netflix_recommender_system:latest .`  
+
+Run the container:  
+`docker run -p 8000:8000 netflix_recommender_system:latest`
 
 
 ## Get the predictions
@@ -74,7 +78,9 @@ curl --header "Content-Type: application/json" \
   http://0.0.0.0:8000
 ```  
 
-The result shows after about a minute:  
+The sends back the result after about a minute:  
 ```
 {"predicted_rating":3.245851373706017}
 ```
+
+Prediction takes long because the compution of features requires to consider all the past ratings from all customers on all movies. It could be refactored (and so could other things as well) but that's not really the point of this small project.  
