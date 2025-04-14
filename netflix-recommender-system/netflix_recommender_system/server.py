@@ -1,13 +1,11 @@
+"""Endpoints."""
+
 from fastapi import FastAPI, Request
+
 import netflix_recommender_system.predict
 
 
 app = FastAPI()
-
-
-# @app.get("/")
-# def root():
-#     return {"predicted_rating": netflix_recommender_system.predict.run()}
 
 
 @app.post("/")

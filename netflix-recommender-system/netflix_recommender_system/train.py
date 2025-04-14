@@ -2,9 +2,10 @@
 
 import pathlib
 import time
-import dill as pickle
 import yaml
 import os
+
+import dill as pickle
 
 from netflix_recommender_system.logger import logger
 from netflix_recommender_system.config import config

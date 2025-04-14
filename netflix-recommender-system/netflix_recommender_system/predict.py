@@ -1,31 +1,17 @@
 """Predict."""
 
 import pathlib
-import dill as pickle
 import copy
+
+import dill as pickle
 
 from netflix_recommender_system.config import config
 from netflix_recommender_system.preprocessing import Preprocessing
 
 
-class SupervisedLearning(object):
-    pass
-
-
 def run(data: dict):
-    # PREDICTION_DICT = {
-    #     "customer_id": 1044034,
-    #     # "rating": None,
-    #     "rating_date": "2005-02-03",
-    #     "movie_id": 12031,
-    #     "release_year": 2002,
-    #     "title": "Scotland",
-    # }
 
     PREDICTION_DICT = data
-
-    # return config
-    # SupervisedLearning
 
     with open(
         pathlib.Path(
@@ -36,8 +22,6 @@ def run(data: dict):
         "rb",
     ) as file:
         learning_pipeline = pickle.load(file)
-    # with open("model.pickle", "rb") as file:
-    #     learning_pipeline = pickle.load(file)
 
     preprocessing_pipeline = Preprocessing(
         mode="prediction",
