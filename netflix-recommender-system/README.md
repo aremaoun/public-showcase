@@ -106,9 +106,8 @@ Run pylint (static code analyzer):
 `pylint netflix_recommender_system`
 
 ### Unit tests
-Run the 1st time:
+Run the 1st time (necessary to create the snapshot file to be tested against):
 `pytest tests/ -vvv --snapshot-update`
 
-This will create the snapshot to be tested against.
-After that, always run:
+After that, always test with:
 `pytest tests/ -vvv`
