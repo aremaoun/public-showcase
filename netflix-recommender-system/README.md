@@ -2,7 +2,6 @@
 
 A basic machine learning **recommender system** application based on the famous 1 million $ [Netflix Prize](https://en.wikipedia.org/wiki/Netflix_Prize) dataset. Developed using:
 - <img src="https://149860134.v2.pressablecdn.com/wp-content/uploads/pythoned.png" alt="drawing" width="14em;"/> **Python** (+ Scikit-Learn + FastAPI)
-- <img src="https://www.uvicorn.org/uvicorn.png" alt="drawing" width="14em;"/> **Uvicorn**
 - <img src="https://static-00.iconduck.com/assets.00/docker-icon-icon-512x370-m2lt8o0b.png" alt="drawing" width="14em;"/> **Docker**
 
 To speed it up, this project is actually based on a small sample of the [actual dataset](https://www.kaggle.com/datasets/netflix-inc/netflix-prize-data), please read further below on that.
@@ -22,9 +21,17 @@ I also classify movies by era (e.g 70s and 80s) and consider the average rate su
 
 Out of simplicity, movie titles are not considered as features. I assume a lot of work for modest gain in accuracy.
 
+### Training
+
+A random forest us used for training. Out of simiplicity, there is no hyperparameter optimization.
+
 The objective metric is RMSE, which was the one used in the competition.
 
-We learn on rating data up to 2003, validate on 2004 and predict on 2005.
+Learning: 2003
+
+Validation: 2004
+
+Prediction: 2005
 
 
 ## Run the application
