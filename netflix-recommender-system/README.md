@@ -27,7 +27,7 @@ A random forest us used for training. Out of simiplicity, there is no hyperparam
 
 The objective metric is RMSE, which was the one used in the competition.
 
-Learning: 2003
+Learning: up to 2003
 
 Validation: 2004
 
