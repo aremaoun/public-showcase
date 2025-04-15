@@ -1,0 +1,30 @@
+name: Run python unit test for netflix-recommender-system
+
+on:
+  # For security reasons: never have a pull_request trigger on a public repository
+  # https://stackoverflow.com/questions/76030960/whats-the-proper-way-to-use-github-actions-with-a-public-repo-if-we-absolutely
+  push:
+    branches: ["**"]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+    steps:
+    - name: Check out repos
+      uses: actions/checkout@v4
+    - name: Set up python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install deps
+      run: |
+        sudo apt-get update && sudo apt-get install -y --no-install-recommends gcc linux-libc-dev libc6-dev
+    - name: Run python unit test
+      run: |
+        cd netflix-recommender-system
+        pip install "poetry==1.6.1" && poetry config virtualenvs.create false && poetry install --no-root --no-interaction -vvv
+        pytest tests/ -vvv

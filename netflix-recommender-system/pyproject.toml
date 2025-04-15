@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "netflix_recommender_system"
+version = "0.1.0"
+description = "A basic machine learning microservice of a recommendation system on the Netflix Prize data."
+authors = ["aremaoun"]
+license = "MIT License"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.3"
+numpy = "^2.0"
+scikit-learn = "^1.6.1"
+fastapi = {extras = ["standard"], version = "^0.115.12"}
+uvicorn = "^0.34.0"
+dill = "^0.3.9" # Replacement for pickle. Pickles could not load on fastAPI/Uvicorn w issues related to namespaces
+pytest-snapshot = "^0.9.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+mypy = "^1.15.0"
+pylint = "^3.3.6"
+pre-commit = "^4.2.0"
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+train = 'netflix_recommender_system.train:run'
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = '''import-error,
+             no-name-in-module,
+             logging-fstring-interpolation,
+             use-implicit-booleaness-not-comparison,
+             fixme'''
