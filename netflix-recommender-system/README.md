@@ -89,7 +89,7 @@ The sends back the result after about a minute:
 {"predicted_rating":3.245851373706017}
 ```
 
-Prediction takes long because the compution of features requires to consider all the past ratings from all customers on all movies. It could be refactored (and so could other things as well) but that's not really the point of this small project.
+Prediction takes long because the compution of features requires to consider all the past ratings from all customers on all movies. In a production system, we can imagine that jobs would be running in the background to update frequently those ratings and store for each user a list of movies with the highest ratings. At application runtime, those ratings would be simply queried.
 
 ## Code maintenance
 
